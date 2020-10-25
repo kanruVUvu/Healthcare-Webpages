@@ -1,0 +1,474 @@
+<! DOCTYPE html>
+<html>
+<head>
+<script src="swipe.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="67235d48adca9db7ca959bc3a5076d7a.css">
+<link rel="stylesheet" type="text/css" href="528a55f23a8aecfb8a343a5a1b8c75e5.css" media="all">
+<script async="" src="https://u.heatmap.it/log.js"></script><script src="https://connect.facebook.net/signals/config/546486185942523?v=2.9.15&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//static.hotjar.com/c/hotjar-1648863.js?sv=5"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/JZfekeK8w6ZlhLfH_ZyseSLX/recaptcha__en.js"></script><script async="" src="https://embed.tawk.to/582ae0877295ad7394c9a0d5/default" charset="UTF-8" crossorigin="*"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TZ4KNMR"></script><script type="text/javascript" src="2284124e234fb6cb55b3dd803d33112b.js.pagespeed.jm.GreWCrZvPM.js"></script>
+<script type="text/javascript" async="async">//<![CDATA[
+if(!window.Mage)var Mage={};Mage.Cookies={};Mage.Cookies.expires=null;Mage.Cookies.path='/';Mage.Cookies.domain=null;Mage.Cookies.secure=false;Mage.Cookies.set=function(name,value){var argv=arguments;var argc=arguments.length;var expires=(argc>2)?argv[2]:Mage.Cookies.expires;var path=(argc>3)?argv[3]:Mage.Cookies.path;var domain=(argc>4)?argv[4]:Mage.Cookies.domain;var secure=(argc>5)?argv[5]:Mage.Cookies.secure;document.cookie=name+"="+escape(value)+((expires==null)?"":("; expires="+expires.toGMTString()))+((path==null)?"":("; path="+path))+((domain==null)?"":("; domain="+domain))+((secure==true)?"; secure":"");};Mage.Cookies.get=function(name){var arg=name+"=";var alen=arg.length;var clen=document.cookie.length;var i=0;var j=0;while(i<clen){j=i+alen;if(document.cookie.substring(i,j)==arg)return Mage.Cookies.getCookieVal(j);i=document.cookie.indexOf(" ",i)+1;if(i==0)break;}return null;};Mage.Cookies.clear=function(name){if(Mage.Cookies.get(name)){document.cookie=name+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT";}};Mage.Cookies.getCookieVal=function(offset){var endstr=document.cookie.indexOf(";",offset);if(endstr==-1){endstr=document.cookie.length;}return unescape(document.cookie.substring(offset,endstr));};
+//]]></script> 
+   <style>
+   
+   @keyframes slidy {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+   .slider {
+  width: 300px;
+  height: 200px;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  background: white;
+  z-index: 1;
+}
+
+#items {
+  width: 10000px;
+  position: relative;
+  top: 0;
+  left: -262px;
+}
+
+#items.shifting {
+  transition: left .2s ease-out;
+}
+
+.slide {
+  box-sizing:border-box;
+  border:1px solid grey;
+  width: 262px;
+  height: 200px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position:relative;
+  background: white;
+  margin-right:15px;
+}
+
+.bookings {
+position:relative;
+text-align:left;
+font-style:italic;
+color:grey;
+top:10px;
+right:-12px;
+font-size:15px;
+}
+
+.silver {
+position:relative;
+top:0px;
+right:-14px;
+font-size:12px;
+color:white;
+width:178px;
+background-color:black;
+font-weight:bold;
+}
+
+.silvertests {
+position:relative;
+color:blue;
+right:-14px;
+font-size:14px;
+}
+
+.silverbutton {
+position:relative;
+cursor:pointer;
+width:100px;
+height:200px;
+}
+
+#price1 {
+position:relative;
+font-style:normal;
+font-weight:bold;
+right:-14px;
+top:-21px;
+}
+
+#price2 {
+position:relative;
+font-style:normal;
+color:grey;
+left:-67px;
+}
+
+#price3 {
+position:relative;
+color:black;
+left:-67px;
+}
+
+
+</style>
+<style>
+.control {
+  position: relative;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 20px;
+  margin-top: -20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.prev,
+.next {
+  background-size: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.prev {
+  background-image: url(ChevronLeft.png);
+  left: -20px;
+}
+
+.next {
+  background-image: url(ChevronRight-512.png);
+  right: -20px;
+}
+
+.prev:active,
+.next:active {
+  transform: scale(0.8);
+}
+</style>
+	<style>
+	#pro1 {
+		z-index:99;
+	}
+	
+	.blinking{
+    animation:blinkingText 1.2s infinite;
+	position:relative;
+	top:-22px;
+	right:-17px;
+	background-color:green;
+	font-size:12px;
+	font-style:normal;
+	font-weight:bold;
+}
+@keyframes blinkingText{
+    0%{     color: white;    }
+    49%{    color: white; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: white;    }
+}
+  .wrapper3 {
+	text-align:center
+	}
+
+	   .wrapper2 {
+	text-align:center
+	}
+	.Call Back {
+		position:absolute;
+		top:50%;
+	}
+     #abc {
+		 display:none;
+	 }
+		#scans tr:nth-child(even){background-color: #f2f2f2;}
+		#scans tr:hover {background-color: #ddd;}
+		.header{
+			width:-webkit-fill;
+  height:40px;
+  background-image:linear-gradient(to right,white 45%,#7A52A1 90%);
+		}
+		.form{
+			background-color: #f3f3f3;
+    		height: 355px;
+    		position: absolute;
+    		top: -384px;
+    		width: 86%;
+		}
+		.inpfor{
+			height: 36px;
+    		border-color: #eee;
+    		margin-top: 25px;
+    		width: 88%;
+		}
+		.inputs{
+			padding:15px;
+		}
+	</style>
+</head>
+<div class="container" style="position:relative;top:-120px">
+<body style="overflow-x: hidden">
+	<div class="header">
+	<a href="https://bookmyscans.com/master-health-checkup-home" title="BookMyScans" class="logo">
+		<img src="/media/mhcdata/BMS logo.png" style="position:relative;left:-46px;top:-31px" alt="logo" width="200px">
+		</a>
+	</div>
+	<div class="main-inner">
+   <div class="health-checkup mhc" >
+   <div class="mhc-slider mobile-banner">
+         <div class="container">
+            <div class="bms-sliders-home">
+               <div class="image-area">
+                  <img src="/media/mhcdata/Add a heading.png" alt="bookmyscans" class="img-responsive">
+               </div>
+            </div>
+         </div>
+   </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div id="slider" class="slider">
+  <div class="wrapper"> 
+    <div id="items" class="items">
+<span class="slide" style="position:relative;width:262px;height:240px;box-sizing:border-box;border:1px solid grey"><h6 style="position:relative;text-align:left;font-style:italic;color:grey;top:10px;right:-12px;font-size:15px">Booked 90,000 Times</h6><br><h6 style="position:relative;top:0px;right:-14px;font-size:12px;color:white;width:178px;background-color:black;font-weight:bold">Master Health Checkup Silver</h6><br><p style="position:relative;color:blue;right:-14px;font-size:14px">Complete Hemogram(24), Diabetes(3),.....60 Tests + 2 Scans ></p><br><br><div><em class="fa fa-inr" style="position:relative;font-style:normal;color:grey;top:-26px;right:-14px"></em><del style="position:relative;color:black;top:-26px;right:-14px">6500</del><em class="fa fa-inr" style="position:relative;font-style:normal;font-weight:bold;left:-27px">2500</em>&nbsp;<span class="blinking" style="position:relative;left:-27px;top:-1px">62% Off</span></div><button ontouchstart="location.href = 'https://bookmyscans.com/master-health-checkup-silver';" style="position:relative;width:92px;right:-156px;top:-24px;font-size:13px;background-color:orange;color:white">Book Now</button></span>
+<span class="slide" style="position:relative;width:262px;height:240px;box-sizing:border-box;border:1px solid grey"><h6 style="position:relative;text-align:left;font-style:italic;color:grey;top:10px;right:-12px;font-size:15px">Booked 50,000 Times</h6><br><h6 style="position:relative;top:0px;right:-14px;font-size:12px;color:white;width:178px;background-color:black;font-weight:bold">Master Health Checkup Gold</h6><br><p style="position:relative;color:blue;right:-14px;font-size:14px">Complete Hemogram(24), Diabetes(4),.....102 Tests + 2 Scans ></p><br><br><div><em class="fa fa-inr" style="position:relative;font-style:normal;color:grey;top:-26px;right:-14px"></em><del style="position:relative;color:black;top:-26px;right:-14px">7500</del><em class="fa fa-inr" style="position:relative;font-style:normal;font-weight:bold;left:-27px">3500</em>&nbsp;<span class="blinking" style="position:relative;left:-27px;top:-1px">54% Off</span></div><button ontouchstart="location.href = 'https://bookmyscans.com/master-health-checkup-gold';" style="position:relative;width:92px;right:-156px;top:-24px;font-size:13px;background-color:orange;color:white">Book Now</button></span>
+<span class="slide" style="position:relative;width:262px;height:240px;box-sizing:border-box;border:1px solid grey"><h6 style="position:relative;text-align:left;font-style:italic;color:grey;top:10px;right:-12px;font-size:15px">Booked 30,000 Times</h6><br><h6 style="position:relative;top:0px;right:-14px;font-size:12px;color:white;width:202px;background-color:black;font-weight:bold">Master Health Checkup Platinum</h6><br><p style="position:relative;color:blue;right:-14px;font-size:14px">Complete Hemogram(24), Diabetes(4),.....102 Tests + 5 Scans ></p><br><br><div><em class="fa fa-inr" style="position:relative;font-style:normal;color:grey;top:-26px;right:-14px"></em><del style="position:relative;color:black;top:-26px;right:-14px">9500</del><em class="fa fa-inr" style="position:relative;font-style:normal;font-weight:bold;left:-27px">5500</em>&nbsp;<span class="blinking" style="position:relative;left:-27px;top:-1px">42% Off</span></div><button ontouchstart="location.href = 'https://bookmyscans.com/master-health-checkup-platinum';" style="position:relative;width:92px;right:-156px;top:-24px;font-size:13px;background-color:orange;color:white">Book Now</button></span>
+<span class="slide" style="position:relative;width:262px;height:240px;box-sizing:border-box;border:1px solid grey"><h6 style="position:relative;text-align:left;font-style:italic;color:grey;top:10px;right:-12px;font-size:15px">Booked 2,00,000 Times</h6><br><h6 style="position:relative;top:0px;right:-14px;font-size:12px;color:white;width:202px;background-color:black;font-weight:bold">Master Health Checkup Premium</h6><br><p style="position:relative;color:blue;right:-14px;font-size:14px">Complete Hemogram(24), Diabetes(7),.....135 Tests + 5 Scans ></p><br><br><div><em class="fa fa-inr" style="position:relative;font-style:normal;color:grey;top:-26px;right:-14px"></em><del style="position:relative;color:black;top:-26px;right:-14px">12500</del><em class="fa fa-inr" style="position:relative;font-style:normal;font-weight:bold;left:-27px">7500</em>&nbsp;<span class="blinking" style="position:relative;left:-27px;top:-1px">40% Off</span></div><button ontouchstart="location.href = 'https://bookmyscans.com/master-health-checkup-premium';" style="position:relative;width:92px;right:-156px;top:-24px;font-size:13px;background-color:orange;color:white">Book Now</button></span>
+    </div>
+  </div>
+ <a id="prev" class="control prev"></a>
+  <a id="next" class="control next"></a> 
+</div>
+</div>
+</div>
+<div class="wrapper2">
+<button class="Call Back" onclick="myFunction()" style="position:relative;font-size:17px;background-color:orange;color:white;bottom:-26px" id="Request">Request a Call Back</button>
+</div>
+<br>
+<br>
+<h6 style="position:relative;text-align:center;font-size:14px;font-weight:bold">(FREE Doctor Consultation Available) </h6>
+<br>
+<script>
+function myFunction() {
+  var x = document.getElementById("abc");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script> 
+<br>
+<br>
+<div id="abc">
+<form id="quick-from" action="<?php echo $this->getUrl('mhcpackages/index/bookmhc'); ?>"  method="post" name="registration">
+                        <div class="form-group">
+                           <div class="inputGroupContainer">
+                              <div class="input-group">
+                                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                 <input type="text" class="form-control required-entry validate-alpha" name="name" id="quick_name" style="position:relative;font-size:24px;height:44px;width:301px">
+                              </div>
+                           </div>
+                        </div>
+                 
+                  <div class="form-group">
+                  <div class="inputGroupContainer">
+                  <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <input type="number" class="form-control required-entry  validate-length maximum-length-10 validate-phoneStrict" name="phone" id="quick_mobile" style="position:relative;font-size:24px;height:44px;width:301px">
+                  </div>
+                  </div>
+                  </div>
+                  <p class="text-center quick_success">Thank you</p>
+                 <div class="form-group text-center submitButton">
+<button type="submit" id="qickcontact_button" class="btn btn-default pack" style="color:black;background-color:grey;position:relative;width:185px;top:-31px">Submit</button>
+                     </div>
+                  </form>
+				  </div>
+				 <br>
+<h2 style="position:relative;text-align:center;font-weight:bold;font-size:16px">Most Trusted Health Checkup at Affordable Rates </h2>
+<div class="container">
+<div class="row">
+<div class="col-md-12 affordable-rates">
+<img src="/media/mhcdata/Banner 1.png" style="position:relative;left:-42px;width:354px;height:93px" alt="Diagnostics Images">
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  function yourFunction() {
+  document.getElementByClass("required-entry").required = true;
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#Request").click(function() {
+    $("#abc").toggle();
+  });
+});
+</script>
+<script type="text/javascript">
+var slider = document.getElementById('slider'),
+    sliderItems = document.getElementById('items'),
+    prev = document.getElementById('prev'),
+    next = document.getElementById('next');
+
+slide(slider, sliderItems, prev, next);
+
+function slide(wrapper, items, prev, next) {
+  var posX1 = 0,
+      posX2 = 0,
+      posInitial,
+      posFinal,
+      threshold = 100,
+      slides = items.getElementsByClassName('slide'),
+      slidesLength = slides.length,
+      slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
+      firstSlide = slides[0],
+      lastSlide = slides[slidesLength - 1],
+      cloneFirst = firstSlide.cloneNode(true),
+      cloneLast = lastSlide.cloneNode(true),
+      index = 0,
+      allowShift = true;
+  
+  // Clone first and last slide
+  items.appendChild(cloneFirst);
+  items.insertBefore(cloneLast, firstSlide);
+  wrapper.classList.add('loaded');
+  
+  // Mouse and Touch events
+  items.onmousedown = dragStart;
+  
+  // Touch events
+  items.addEventListener('touchstart', dragStart);
+  items.addEventListener('touchend', dragEnd);
+  items.addEventListener('touchmove', dragAction);
+  
+  // Click events
+  prev.addEventListener('click', function () { shiftSlide(-1) });
+  next.addEventListener('click', function () { shiftSlide(1) });
+  
+  // Transition events
+  items.addEventListener('transitionend', checkIndex);
+  
+  function dragStart (e) {
+    e = e || window.event;
+    e.preventDefault();
+    posInitial = items.offsetLeft;
+    
+    if (e.type == 'touchstart') {
+      posX1 = e.touches[0].clientX;
+    } else {
+      posX1 = e.clientX;
+      document.onmouseup = dragEnd;
+      document.onmousemove = dragAction;
+    }
+  }
+
+  function dragAction (e) {
+    e = e || window.event;
+    
+    if (e.type == 'touchmove') {
+      posX2 = posX1 - e.touches[0].clientX;
+      posX1 = e.touches[0].clientX;
+    } else {
+      posX2 = posX1 - e.clientX;
+      posX1 = e.clientX;
+    }
+    items.style.left = (items.offsetLeft - posX2) + "px";
+  }
+  
+  function dragEnd (e) {
+    posFinal = items.offsetLeft;
+    if (posFinal - posInitial < -threshold) {
+      shiftSlide(1, 'drag');
+    } else if (posFinal - posInitial > threshold) {
+      shiftSlide(-1, 'drag');
+    } else {
+      items.style.left = (posInitial) + "px";
+    }
+
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+  
+  function shiftSlide(dir, action) {
+    items.classList.add('shifting');
+    
+    if (allowShift) {
+      if (!action) { posInitial = items.offsetLeft; }
+
+      if (dir == 1) {
+        items.style.left = (posInitial - slideSize) + "px";
+        index++;      
+      } else if (dir == -1) {
+        items.style.left = (posInitial + slideSize) + "px";
+        index--;      
+      }
+    };
+    
+    allowShift = false;
+  }
+    
+  function checkIndex (){
+    items.classList.remove('shifting');
+
+    if (index == -1) {
+      items.style.left = -(slidesLength * slideSize) + "px";
+      index = slidesLength - 1;
+    }
+
+    if (index == slidesLength) {
+      items.style.left = -(1 * slideSize) + "px";
+      index = 0;
+    }
+    
+    allowShift = true;
+  }
+}
+</script>
+
+<div class="footer-container text-center ">
+    <div class="footer">
+            <div class="footer-bottom footer-mhp">
+            <div class="container">
+                                                <address>&copy; 2020. All Rights Reserved.</address>
+                            </div>
+        </div>
+        </div>
+</div>
+</body>
+</div>
+</html>
